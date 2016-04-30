@@ -11,7 +11,7 @@ public class GameStatus {
 	
 	// status variables
 	private boolean newShip;
-	private boolean[] newAsteroid = new boolean[3];
+	private boolean[] newAsteroid = new boolean[5];
 	private long asteroidsDestroyed = 0;
 	private int shipsLeft;
 	
