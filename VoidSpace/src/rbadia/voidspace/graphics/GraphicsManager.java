@@ -37,7 +37,7 @@ public class GraphicsManager {
 			this.shipExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/shipExplosion.png"));
 			this.bulletImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bullet.png"));
 			this.enemyShipImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/enemyShip.png"));
-			this.bossEnemyShip = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/PEDROenemyShip.png"));
+			this.bossEnemyShip = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bossShip.png"));
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "The graphic files are either corrupt or missing.",
 					"VoidSpace - Fatal Error", JOptionPane.ERROR_MESSAGE);

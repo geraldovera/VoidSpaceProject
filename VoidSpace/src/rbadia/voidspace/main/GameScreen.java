@@ -449,7 +449,7 @@ public class GameScreen extends JPanel {
 //Method 3: Enemy boss movement.
 			if(status.getAsteroidsDestroyed() >= 50){
 				if ((directionX > 0) & (directionY < 0)) {
-					enemyShip.translate(5 * directionX, 3 * directionY);
+					enemyShip.translate(3 * directionX, 3 * directionY);
 					graphicsMan.drawBoss(enemyShip, g2d, this);
 					if (enemyShip.getX() > (this.getWidth() - enemyShip.getEnemyShipWidth() - 1)) {
 						directionX = -1;
@@ -459,7 +459,7 @@ public class GameScreen extends JPanel {
 					}
 				}
 				if ((directionX < 0) & (directionY < 0)) {
-					enemyShip.translate(5 * directionX, 3 * directionY);
+					enemyShip.translate(3 * directionX, 3 * directionY);
 					graphicsMan.drawBoss(enemyShip, g2d, this);
 					if (enemyShip.getX() < 1) {
 						directionX = 1;
@@ -469,7 +469,7 @@ public class GameScreen extends JPanel {
 					}
 				}
 				if ((directionX > 0) & (directionY > 0)) {
-					enemyShip.translate(5 * directionX, 3 * directionY);
+					enemyShip.translate(3 * directionX, 3 * directionY);
 					graphicsMan.drawBoss(enemyShip, g2d, this);
 					if (enemyShip.getX() > (this.getWidth() - enemyShip.getWidth() - 1)) {
 						directionX = -1;
@@ -479,7 +479,7 @@ public class GameScreen extends JPanel {
 					}
 				}
 				if ((directionX < 0) & (directionY > 0)) {
-					enemyShip.translate(5 * directionX, 3 * directionY);
+					enemyShip.translate(3 * directionX, 3 * directionY);
 					graphicsMan.drawBoss(enemyShip, g2d, this);
 					if (enemyShip.getX() < 1) {
 						directionX = 1;
@@ -641,7 +641,7 @@ public class GameScreen extends JPanel {
 	 * Draws the "Game Over" message.
 	 */
 	private void drawGameOver() {
-		String gameOverStr = "GAME OVER";
+		String gameOverStr = "TE COLGASTE";
 		Font currentFont = biggestFont == null? bigFont : biggestFont;
 		float fontSize = currentFont.getSize2D();
 		bigFont = currentFont.deriveFont(fontSize + 1).deriveFont(Font.BOLD);
