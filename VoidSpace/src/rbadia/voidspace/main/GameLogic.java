@@ -24,7 +24,7 @@ public class GameLogic {
 	
 	private Ship ship;
 	private EnemyShip enemyShip;
-	private Asteroid[] asteroid = new Asteroid[3];
+	private Asteroid[] asteroid = new Asteroid[5];
 	private List<Bullet> bullets;
 	private List<Bullet> enemyBullets;
 	
@@ -77,6 +77,8 @@ public class GameLogic {
 		status.setNewAsteroid(false, 0); 
 		status.setNewAsteroid(false, 1);
 		status.setNewAsteroid(false, 2);
+		status.setNewAsteroid(false, 3);
+		status.setNewAsteroid(false, 4);
 		status.setNewEnemy(false);
 				
 		// init the ship and the asteroid AND THE ENEMY
@@ -209,6 +211,8 @@ public class GameLogic {
 		this.asteroid[0] = new Asteroid(screen);
 		this.asteroid[1] = new Asteroid(screen);
 		this.asteroid[2] = new Asteroid(screen);
+		this.asteroid[3] = new Asteroid(screen);
+		this.asteroid[4] = new Asteroid(screen);
 		return asteroid;
 	}
 	

@@ -31,7 +31,7 @@ public class GameScreen extends JPanel {
 	
 	private static final int NEW_SHIP_DELAY = 500;
 	private static final int NEW_ASTEROID_DELAY = 500;
-	private static final int ASTEROID_AMOUNT = 3;
+	private static final int ASTEROID_AMOUNT = 5;
 	
 	private long lastShipTime;
 	private long lastAsteroidTime;
@@ -168,7 +168,7 @@ public class GameScreen extends JPanel {
 					status.setNewAsteroid(false,0);
 					asteroid[0].setLocation(rand.nextInt(getWidth() - asteroid[0].width), 0);
 					asteroid[0].newDirection();
-					asteroid[0].setSpeed(rand.nextInt(4) + 1);
+					asteroid[0].setSpeed(rand.nextInt(3) + 1);
 				}
 				else{
 					// draw explosion
@@ -195,7 +195,7 @@ public class GameScreen extends JPanel {
 					status.setNewAsteroid(false,1);
 					asteroid[1].setLocation(rand.nextInt(getWidth() - asteroid[1].width), 0);
 					asteroid[1].newDirection();
-					asteroid[1].setSpeed(rand.nextInt(4) + 2);
+					asteroid[1].setSpeed(rand.nextInt(3) + 1);
 				}
 				else{
 					// draw explosion
@@ -223,7 +223,63 @@ public class GameScreen extends JPanel {
 					status.setNewAsteroid(false,2);
 					asteroid[2].setLocation(rand.nextInt(getWidth() - asteroid[2].width), 0);
 					asteroid[2].newDirection();
-					asteroid[2].setSpeed(rand.nextInt(4) + 3);
+					asteroid[2].setSpeed(rand.nextInt(3) + 2);
+				}
+				else{
+					// draw explosion
+					graphicsMan.drawAsteroidExplosion(asteroidExplosion, g2d, this);
+				}
+		}
+	}
+	
+	if(status.getAsteroidsDestroyed() > 30){
+		if(!status.isNewAsteroid(3)){
+			// draw the asteroid until it reaches the bottom of the screen
+			if(asteroid[3].getY() + asteroid[3].getSpeed() < this.getHeight()){
+				asteroid[3].translate(asteroid[3].getAsteroidDirection(), asteroid[3].getSpeed());
+				graphicsMan.drawAsteroid(asteroid[3], g2d, this);
+			}
+			else{
+				asteroid[3].setLocation(rand.nextInt(getWidth() - asteroid[3].width), 0);
+			}
+		}
+			else{
+				long currentTime = System.currentTimeMillis();
+				if((currentTime - lastAsteroidTime) > NEW_ASTEROID_DELAY){
+					// draw a new asteroid
+	 				lastAsteroidTime = currentTime;
+					status.setNewAsteroid(false,3);
+					asteroid[3].setLocation(rand.nextInt(getWidth() - asteroid[2].width), 0);
+					asteroid[3].newDirection();
+					asteroid[3].setSpeed(rand.nextInt(3) + 2);
+				}
+				else{
+					// draw explosion
+					graphicsMan.drawAsteroidExplosion(asteroidExplosion, g2d, this);
+				}
+		}
+	}
+	
+	if(status.getAsteroidsDestroyed() > 40){
+		if(!status.isNewAsteroid(4)){
+			// draw the asteroid until it reaches the bottom of the screen
+			if(asteroid[4].getY() + asteroid[4].getSpeed() < this.getHeight()){
+				asteroid[4].translate(asteroid[4].getAsteroidDirection(), asteroid[4].getSpeed());
+				graphicsMan.drawAsteroid(asteroid[4], g2d, this);
+			}
+			else{
+				asteroid[4].setLocation(rand.nextInt(getWidth() - asteroid[4].width), 0);
+			}
+		}
+			else{
+				long currentTime = System.currentTimeMillis();
+				if((currentTime - lastAsteroidTime) > NEW_ASTEROID_DELAY){
+					// draw a new asteroid
+	 				lastAsteroidTime = currentTime;
+					status.setNewAsteroid(false,4);
+					asteroid[4].setLocation(rand.nextInt(getWidth() - asteroid[4].width), 0);
+					asteroid[4].newDirection();
+					asteroid[4].setSpeed(rand.nextInt(4) + 2);
 				}
 				else{
 					// draw explosion
