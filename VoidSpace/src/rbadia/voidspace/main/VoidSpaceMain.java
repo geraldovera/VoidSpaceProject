@@ -28,6 +28,8 @@ public class VoidSpaceMain {
         InputHandler inputHandler = new InputHandler(gameLogic);
         frame.addKeyListener(inputHandler);
         
+        gameLogic.playMusic();
+        
         // show main frame
 		frame.setVisible(true);
 		

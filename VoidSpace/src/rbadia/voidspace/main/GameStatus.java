@@ -11,9 +11,11 @@ public class GameStatus {
 	
 	// status variables
 	private boolean newShip;
-	private boolean[] newAsteroid = new boolean[5];
+	private boolean[] newAsteroid = new boolean[3];
+	private boolean newEnemy;
 	private long asteroidsDestroyed = 0;
 	private int shipsLeft;
+	private long enemyDestroyed;
 	
 	public GameStatus(){
 		
@@ -91,6 +93,31 @@ public class GameStatus {
 		this.asteroidsDestroyed = asteroidsDestroyed;
 	}
 
+	
+	/**
+	 * Indicates if a new enemy should be created/drawn.
+	 * @return if a new enemy should be created/drawn
+	 */
+	public synchronized boolean isNewEnemy() {
+		return newEnemy;
+	}
+
+	public synchronized void setNewEnemy(boolean newEnemyShip) {
+		this.newEnemy = newEnemyShip;
+	}
+	
+	/**
+	 * Returns the number of enemy ship destroyed. 
+	 * @return the number of enemy ship destroyed
+	 */
+	public synchronized long getEnemyDestroyed() {
+		return enemyDestroyed;
+	}
+
+	public synchronized void setEnemyDestroyed(long enemyDestroyed) {
+		this.enemyDestroyed  = enemyDestroyed;
+	}
+	
 	/**
 	 * Returns the number ships/lives left.
 	 * @return the number ships left

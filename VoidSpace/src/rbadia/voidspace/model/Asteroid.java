@@ -30,7 +30,7 @@ public class Asteroid extends Rectangle {
 	}
 	
 	public void newDirection(){
-		dir = (int) (rand.nextInt(3) * Math.pow(-1, rand.nextInt(2)));
+		dir = (int) (rand.nextInt(4) * Math.pow(-1, rand.nextInt(2)));
 	}
 	public int getAsteroidDirection(){
 		return dir;
