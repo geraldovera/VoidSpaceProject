@@ -365,7 +365,7 @@ public class GameScreen extends JPanel {
 		// draw enemy ship
 		if (!status.isNewEnemy()) {
 			//// METHOD 1: Move in both x and y direction inside the top half of the screen
-			if ((status.getAsteroidsDestroyed() >= 5) & (status.getAsteroidsDestroyed() < 10)) {
+			if ((status.getAsteroidsDestroyed() >= 10) & (status.getAsteroidsDestroyed() < 25)) {
 				if ((directionX > 0) & (directionY < 0)) {
 					enemyShip.translate(3 * directionX, 2 * directionY);
 					graphicsMan.drawEnemyShip(enemyShip, g2d, this);
@@ -411,7 +411,7 @@ public class GameScreen extends JPanel {
 				}
 			}
 			// METHOD 2: Enemy follows ship like a suicide bomber.
-			if ((status.getAsteroidsDestroyed() >= 10) & (status.getAsteroidsDestroyed() < 20)) {
+			if ((status.getAsteroidsDestroyed() >= 30) & (status.getAsteroidsDestroyed() < 45)) {
 				if (this.getHeight() > enemyShip.getY()) { // Movement of enemy
 															// towards your ship
 															// in the y
@@ -447,7 +447,7 @@ public class GameScreen extends JPanel {
 				}
 			}
 //Method 3: Enemy boss movement.
-			if(status.getAsteroidsDestroyed() >= 20){
+			if(status.getAsteroidsDestroyed() >= 50){
 				if ((directionX > 0) & (directionY < 0)) {
 					enemyShip.translate(5 * directionX, 3 * directionY);
 					graphicsMan.drawBoss(enemyShip, g2d, this);
