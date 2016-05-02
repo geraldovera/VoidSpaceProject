@@ -205,7 +205,7 @@ public class GameLogic {
 	}
 	 
 	/**
-	 * Create a new asteroid.
+	 * Create a new array of asteroids.
 	 */
 	public Asteroid[] newAsteroid(GameScreen screen){
 		this.asteroid[0] = new Asteroid(screen);
@@ -233,8 +233,8 @@ public class GameLogic {
 	}
 
 	/**
-	 * Returns the asteroid.
-	 * @return the asteroid
+	 * Returns the asteroids.
+	 * @return the asteroids
 	 */
 	public Asteroid[] getAsteroid() {
 		return asteroid;

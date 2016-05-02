@@ -149,7 +149,7 @@ public class GameScreen extends JPanel {
 			return;
 		}
 		
-		// draw asteroid
+		// draw asteroid #1
 		if(!status.isNewAsteroid(0)){
 			// draw the asteroid until it reaches the bottom of the screen
 			if(asteroid[0].getY() + asteroid[0].getSpeed() < this.getHeight()){
@@ -176,6 +176,7 @@ public class GameScreen extends JPanel {
 				}
 		}	
 		
+		// draw asteroid #2 after 5 asteroids have already been destroyed
 	if(status.getAsteroidsDestroyed() > 5)	{	
 		if(!status.isNewAsteroid(1)){
 			// draw the asteroid until it reaches the bottom of the screen
@@ -204,6 +205,7 @@ public class GameScreen extends JPanel {
 		}
 	}
 		
+	// draw asteroid #3 after 15 asteroids have already been destroyed
 	if(status.getAsteroidsDestroyed() > 15){
 		if(!status.isNewAsteroid(2)){
 			// draw the asteroid until it reaches the bottom of the screen
@@ -232,6 +234,7 @@ public class GameScreen extends JPanel {
 		}
 	}
 	
+	// draw asteroid #4 after 30 asteroids have already been destroyed
 	if(status.getAsteroidsDestroyed() > 30){
 		if(!status.isNewAsteroid(3)){
 			// draw the asteroid until it reaches the bottom of the screen
@@ -260,6 +263,7 @@ public class GameScreen extends JPanel {
 		}
 	}
 	
+	// draw asteroid #5 after 40 asteroids have already been destroyed
 	if(status.getAsteroidsDestroyed() > 40){
 		if(!status.isNewAsteroid(4)){
 			// draw the asteroid until it reaches the bottom of the screen
